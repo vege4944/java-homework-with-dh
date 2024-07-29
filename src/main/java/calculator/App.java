@@ -15,6 +15,25 @@ public class App {
         System.out.println("사칙연산 기호를 입력하세요: "); //알림 메세지 주기
         char operator = sc.next().charAt(0); //사칙연산을 입력받는 구간
 
+        int result = 0; // 모든값을 result에 저장
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            default: //사칙연산이 아닐경우 뜨는 에러 메세지
+                System.out.println("연산이 불가합니다.");
+        }
+        System.out.println(result);
+
 
 
 
