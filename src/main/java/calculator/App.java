@@ -52,6 +52,14 @@ public class App {
             if(sc.nextLine().equals("remove")) {
                 results.remove(0);
             }
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String inquiry = sc.nextLine();
+            if (inquiry.equals("inquiry")) {
+                for (Integer i : results) { //iter 치면 자동완성
+                    System.out.println(i);
+                }
+            }
+
 
             System.out.println("더 계산을 원하시면 enter 버튼을 누르세요. 'exit' 입력 시 종료!");
             String end = sc.nextLine(); //콘솔창에서 입력을 받는 것
