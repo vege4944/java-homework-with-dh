@@ -1,4 +1,4 @@
-package main.java.calculator;
+package calculator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,8 @@ public class App {
 //        int[] results = new int[10]; //int 배열로 먼저 만들기
 //        int count = 0;
         ArrayList<Integer> results = new ArrayList<>();
+        Calculator calculator = new Calculator();
+                //클래스명 이름(calculator.java 파일에서 쓴 이름과 다르게) = 객체
 
         while (true) { // true를 쓰면 while문을 조건없이 무한으로 반복한다는 의미 = for(;;) 같은의미
             System.out.println("첫 번째 숫자를 입력하세요: ");//알림을 주는 메세지 역할
@@ -20,24 +22,11 @@ public class App {
             System.out.println("사칙연산 기호를 입력하세요: "); //알림 메세지 주기
             char operator = sc.next().charAt(0); //사칙연산을 입력받는 구간, charAt 메서드는 매개변수로 char 타입으로 반환 하고자하는 문자열의 위치 (index)를 입력
             sc.nextLine(); //위에 next만 있어서 바로 아래 nextLine추가해주기->문자열도 받아가고 엔터도 자동으로 입력해줌
-            int result = 0; // 모든값을 result에 저장
-            switch (operator) {
-                case '+':
-                    result = num1 + num2;
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-                case '/':
-                    result = num1 / num2;
-                    break;
-                default: //사칙연산 기호의 이외의 것을 쓰면 뜨는 에러 메세지
-                    System.out.println("연산이 불가합니다.");
-            }
-            System.out.println(result); // result를 출력해라!
+
+
+            int result = calculator.calculate(num1, num2, operator);
+            System.out.println(result);
+
 //            if (count == 10) {
 //                for (int i = 1; i < 10; i++) { // 0부터 돌려야하는데 한칸씩 땡길거라
 //                    results[i - 1] = results[i];
